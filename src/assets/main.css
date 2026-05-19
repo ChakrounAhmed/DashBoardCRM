@@ -1,0 +1,58 @@
+/* ─── ila26 CRM — Global Styles ────────────────────────────────────────────── */
+@import '@mdi/font/css/materialdesignicons.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Design tokens ila26 ────────────────────────────────────────────────────── */
+:root {
+  --nav-bg:      #3b0d8c;
+  --nav-accent:  #7c3aed;
+  --nav-border:  rgba(255,255,255,0.08);
+  --ila-primary: #7c3aed;
+  --ila-soft:    #ede9fe;
+  --ila-dark:    #3b0d8c;
+  --ila-green:   #059669;
+  --bg-page:     #f8f9fb;
+}
+
+/* ─── Supprime le drawer Vuetify résiduel ────────────────────────────────────── */
+.v-navigation-drawer  { display: none !important; }
+.v-layout             { --v-layout-left: 0px !important; }
+.v-main               { padding-left: 0 !important; }
+
+/* ─── ApexCharts ─────────────────────────────────────────────────────────────── */
+.apexcharts-tooltip {
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+}
+.apexcharts-legend-text { font-size: 11px !important; font-family: 'Inter', sans-serif !important; }
+
+/* ─── Data table ila26 ───────────────────────────────────────────────────────── */
+.helios-table .v-data-table__th {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+/* ─── Scrollbar fine ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.13); border-radius: 3px; }
+
+/* ─── Animation entrée globale ───────────────────────────────────────────────── */
+.v-main__wrap > * { animation: ilaFadeUp 0.18s ease both; }
+@keyframes ilaFadeUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
